@@ -1,0 +1,1209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.ubagroup.com/finacle10servvalidate/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.ubagroup.com/finacle10servvalidate/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.ubagroup.com/finacle10servvalidate/">
+      <s:element name="ValidatRMCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="rmcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidatRMCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidatRMCodeResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTestFinacleID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="staffid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTestFinacleIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTestFinacleIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLIVEFinacleID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="staffid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLIVEFinacleIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLIVEFinacleIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConfirmBlackListedBVN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bvn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConfirmBlackListedBVNResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmBlackListedBVNResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountSolID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="acctno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountSolIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAccountSolIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLIVEValidateAccountCIF">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="countrycode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLIVEValidateAccountCIFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLIVEValidateAccountCIFResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountFromPhone">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountFromPhoneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetAccountFromPhoneResult" type="tns:CustomerBVNDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CustomerBVNDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="bvn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="account" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ValidateBVNNIBBS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BVN" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateBVNNIBBSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidateBVNNIBBSResult" type="tns:NIBBSOutputParameters" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="NIBBSOutputParameters">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="dateOfBirth" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="middleName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="phoneNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="responseCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="registerationdate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="enrollmentbank" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="enrollmentbranch" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="passportimage" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetLIVECustomerDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLIVECustomerDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetLIVECustomerDetailsResult" type="tns:CustomerDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CustomerDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="accountname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="solid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="solidaddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="customeraddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="state" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="bvn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dateofbirth" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="custid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="accountno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="schemecode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="schemetype" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="accountopendate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InvestmentBookingDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="investtype" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InvestmentBookingDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InvestmentBookingDetailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetQueryLIVEResultDataTableMethod">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="query" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetQueryLIVEResultDataTableMethodResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetQueryLIVEResultDataTableMethodResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AccountDetailsArrayFromPhone">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AccountDetailsArrayFromPhoneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccountDetailsArrayFromPhoneResult" type="tns:ArrayOfCustomerDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCustomerDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CustomerDetails" type="tns:CustomerDetails" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="countrycode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetCustomerResult" type="tns:CustomerAccountDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CustomerAccountDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="accountname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="currency" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="balance" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="freezecode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="freezereasoncode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="accountclosedflag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="savingsacctstatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="currentacctstatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="schemecode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="bvn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="accountopendate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetRates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="request" type="tns:RateRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RateRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="LocalCurrency" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExchangeCurrency" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CountryID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetRatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetRatesResult" type="tns:RateDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RateDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="LocalCurrency" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExchangeCurrency" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CountryID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AppliedRate" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="FinacleCurrency">
+        <s:complexType />
+      </s:element>
+      <s:element name="FinacleCurrencyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FinacleCurrencyResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CBNInterventionInviciblesGetRates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="request" type="tns:RateRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CBNInterventionInviciblesGetRatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CBNInterventionInviciblesGetRatesResult" type="tns:RateDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CBNInterventionInviciblesFinacleCurrency">
+        <s:complexType />
+      </s:element>
+      <s:element name="CBNInterventionInviciblesFinacleCurrencyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CBNInterventionInviciblesFinacleCurrencyResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InvestmentBookingDetailsArray">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="investtype" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InvestmentBookingDetailsArrayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InvestmentBookingDetailsArrayResult" type="tns:ArrayOfInvestmentDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInvestmentDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="InvestmentDetails" type="tns:InvestmentDetails" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="InvestmentDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ACID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="open_effective_date" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAccountFromCIF">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="custid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="countrycode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountFromCIFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAccountFromCIFResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCorporateBVNValidatequery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bvn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="countrycode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCorporateBVNValidatequeryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCorporateBVNValidatequeryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJointBVNValidatequery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cifid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bvn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="countrycode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJointBVNValidatequeryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJointBVNValidatequeryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUBAAlertDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="acctno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="countrycode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUBAAlertDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUBAAlertDetailsResult" type="tns:CustomerDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUBAUDIrectDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="custid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUBAUDIrectDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUBAUDIrectDetailsResult" type="tns:CustomerDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUBACorporateUDIrectDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="custid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUBACorporateUDIrectDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUBACorporateUDIrectDetailsResult" type="tns:ArrayOfCustomerDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBVN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountno" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBVNResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBVNResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ValidatRMCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidatRMCode" />
+  </wsdl:message>
+  <wsdl:message name="ValidatRMCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidatRMCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTestFinacleIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTestFinacleID" />
+  </wsdl:message>
+  <wsdl:message name="GetTestFinacleIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTestFinacleIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLIVEFinacleIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLIVEFinacleID" />
+  </wsdl:message>
+  <wsdl:message name="GetLIVEFinacleIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLIVEFinacleIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmBlackListedBVNSoapIn">
+    <wsdl:part name="parameters" element="tns:ConfirmBlackListedBVN" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmBlackListedBVNSoapOut">
+    <wsdl:part name="parameters" element="tns:ConfirmBlackListedBVNResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountSolIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAccountSolID" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountSolIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAccountSolIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLIVEValidateAccountCIFSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLIVEValidateAccountCIF" />
+  </wsdl:message>
+  <wsdl:message name="GetLIVEValidateAccountCIFSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLIVEValidateAccountCIFResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountFromPhoneSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAccountFromPhone" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountFromPhoneSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAccountFromPhoneResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateBVNNIBBSSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateBVNNIBBS" />
+  </wsdl:message>
+  <wsdl:message name="ValidateBVNNIBBSSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateBVNNIBBSResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLIVECustomerDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLIVECustomerDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetLIVECustomerDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLIVECustomerDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="InvestmentBookingDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:InvestmentBookingDetails" />
+  </wsdl:message>
+  <wsdl:message name="InvestmentBookingDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:InvestmentBookingDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetQueryLIVEResultDataTableMethodSoapIn">
+    <wsdl:part name="parameters" element="tns:GetQueryLIVEResultDataTableMethod" />
+  </wsdl:message>
+  <wsdl:message name="GetQueryLIVEResultDataTableMethodSoapOut">
+    <wsdl:part name="parameters" element="tns:GetQueryLIVEResultDataTableMethodResponse" />
+  </wsdl:message>
+  <wsdl:message name="AccountDetailsArrayFromPhoneSoapIn">
+    <wsdl:part name="parameters" element="tns:AccountDetailsArrayFromPhone" />
+  </wsdl:message>
+  <wsdl:message name="AccountDetailsArrayFromPhoneSoapOut">
+    <wsdl:part name="parameters" element="tns:AccountDetailsArrayFromPhoneResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCustomer" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRatesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRates" />
+  </wsdl:message>
+  <wsdl:message name="GetRatesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="FinacleCurrencySoapIn">
+    <wsdl:part name="parameters" element="tns:FinacleCurrency" />
+  </wsdl:message>
+  <wsdl:message name="FinacleCurrencySoapOut">
+    <wsdl:part name="parameters" element="tns:FinacleCurrencyResponse" />
+  </wsdl:message>
+  <wsdl:message name="CBNInterventionInviciblesGetRatesSoapIn">
+    <wsdl:part name="parameters" element="tns:CBNInterventionInviciblesGetRates" />
+  </wsdl:message>
+  <wsdl:message name="CBNInterventionInviciblesGetRatesSoapOut">
+    <wsdl:part name="parameters" element="tns:CBNInterventionInviciblesGetRatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="CBNInterventionInviciblesFinacleCurrencySoapIn">
+    <wsdl:part name="parameters" element="tns:CBNInterventionInviciblesFinacleCurrency" />
+  </wsdl:message>
+  <wsdl:message name="CBNInterventionInviciblesFinacleCurrencySoapOut">
+    <wsdl:part name="parameters" element="tns:CBNInterventionInviciblesFinacleCurrencyResponse" />
+  </wsdl:message>
+  <wsdl:message name="InvestmentBookingDetailsArraySoapIn">
+    <wsdl:part name="parameters" element="tns:InvestmentBookingDetailsArray" />
+  </wsdl:message>
+  <wsdl:message name="InvestmentBookingDetailsArraySoapOut">
+    <wsdl:part name="parameters" element="tns:InvestmentBookingDetailsArrayResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountFromCIFSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAccountFromCIF" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountFromCIFSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAccountFromCIFResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCorporateBVNValidatequerySoapIn">
+    <wsdl:part name="parameters" element="tns:GetCorporateBVNValidatequery" />
+  </wsdl:message>
+  <wsdl:message name="GetCorporateBVNValidatequerySoapOut">
+    <wsdl:part name="parameters" element="tns:GetCorporateBVNValidatequeryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJointBVNValidatequerySoapIn">
+    <wsdl:part name="parameters" element="tns:GetJointBVNValidatequery" />
+  </wsdl:message>
+  <wsdl:message name="GetJointBVNValidatequerySoapOut">
+    <wsdl:part name="parameters" element="tns:GetJointBVNValidatequeryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUBAAlertDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUBAAlertDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetUBAAlertDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUBAAlertDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUBAUDIrectDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUBAUDIrectDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetUBAUDIrectDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUBAUDIrectDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUBACorporateUDIrectDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUBACorporateUDIrectDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetUBACorporateUDIrectDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUBACorporateUDIrectDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBVNSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBVN" />
+  </wsdl:message>
+  <wsdl:message name="GetBVNSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBVNResponse" />
+  </wsdl:message>
+  <wsdl:portType name="FinacleValidationSoap">
+    <wsdl:operation name="ValidatRMCode">
+      <wsdl:input message="tns:ValidatRMCodeSoapIn" />
+      <wsdl:output message="tns:ValidatRMCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTestFinacleID">
+      <wsdl:input message="tns:GetTestFinacleIDSoapIn" />
+      <wsdl:output message="tns:GetTestFinacleIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLIVEFinacleID">
+      <wsdl:input message="tns:GetLIVEFinacleIDSoapIn" />
+      <wsdl:output message="tns:GetLIVEFinacleIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmBlackListedBVN">
+      <wsdl:input message="tns:ConfirmBlackListedBVNSoapIn" />
+      <wsdl:output message="tns:ConfirmBlackListedBVNSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountSolID">
+      <wsdl:input message="tns:GetAccountSolIDSoapIn" />
+      <wsdl:output message="tns:GetAccountSolIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLIVEValidateAccountCIF">
+      <wsdl:input message="tns:GetLIVEValidateAccountCIFSoapIn" />
+      <wsdl:output message="tns:GetLIVEValidateAccountCIFSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountFromPhone">
+      <wsdl:input message="tns:GetAccountFromPhoneSoapIn" />
+      <wsdl:output message="tns:GetAccountFromPhoneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateBVNNIBBS">
+      <wsdl:input message="tns:ValidateBVNNIBBSSoapIn" />
+      <wsdl:output message="tns:ValidateBVNNIBBSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLIVECustomerDetails">
+      <wsdl:input message="tns:GetLIVECustomerDetailsSoapIn" />
+      <wsdl:output message="tns:GetLIVECustomerDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InvestmentBookingDetails">
+      <wsdl:input message="tns:InvestmentBookingDetailsSoapIn" />
+      <wsdl:output message="tns:InvestmentBookingDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQueryLIVEResultDataTableMethod">
+      <wsdl:input message="tns:GetQueryLIVEResultDataTableMethodSoapIn" />
+      <wsdl:output message="tns:GetQueryLIVEResultDataTableMethodSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AccountDetailsArrayFromPhone">
+      <wsdl:input message="tns:AccountDetailsArrayFromPhoneSoapIn" />
+      <wsdl:output message="tns:AccountDetailsArrayFromPhoneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomer">
+      <wsdl:input message="tns:GetCustomerSoapIn" />
+      <wsdl:output message="tns:GetCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRates">
+      <wsdl:input message="tns:GetRatesSoapIn" />
+      <wsdl:output message="tns:GetRatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FinacleCurrency">
+      <wsdl:input message="tns:FinacleCurrencySoapIn" />
+      <wsdl:output message="tns:FinacleCurrencySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CBNInterventionInviciblesGetRates">
+      <wsdl:input message="tns:CBNInterventionInviciblesGetRatesSoapIn" />
+      <wsdl:output message="tns:CBNInterventionInviciblesGetRatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CBNInterventionInviciblesFinacleCurrency">
+      <wsdl:input message="tns:CBNInterventionInviciblesFinacleCurrencySoapIn" />
+      <wsdl:output message="tns:CBNInterventionInviciblesFinacleCurrencySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InvestmentBookingDetailsArray">
+      <wsdl:input message="tns:InvestmentBookingDetailsArraySoapIn" />
+      <wsdl:output message="tns:InvestmentBookingDetailsArraySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountFromCIF">
+      <wsdl:input message="tns:GetAccountFromCIFSoapIn" />
+      <wsdl:output message="tns:GetAccountFromCIFSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCorporateBVNValidatequery">
+      <wsdl:input message="tns:GetCorporateBVNValidatequerySoapIn" />
+      <wsdl:output message="tns:GetCorporateBVNValidatequerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJointBVNValidatequery">
+      <wsdl:input message="tns:GetJointBVNValidatequerySoapIn" />
+      <wsdl:output message="tns:GetJointBVNValidatequerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUBAAlertDetails">
+      <wsdl:input message="tns:GetUBAAlertDetailsSoapIn" />
+      <wsdl:output message="tns:GetUBAAlertDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUBAUDIrectDetails">
+      <wsdl:input message="tns:GetUBAUDIrectDetailsSoapIn" />
+      <wsdl:output message="tns:GetUBAUDIrectDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUBACorporateUDIrectDetails">
+      <wsdl:input message="tns:GetUBACorporateUDIrectDetailsSoapIn" />
+      <wsdl:output message="tns:GetUBACorporateUDIrectDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBVN">
+      <wsdl:input message="tns:GetBVNSoapIn" />
+      <wsdl:output message="tns:GetBVNSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FinacleValidationSoap" type="tns:FinacleValidationSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ValidatRMCode">
+      <soap:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/ValidatRMCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTestFinacleID">
+      <soap:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/GetTestFinacleID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLIVEFinacleID">
+      <soap:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/GetLIVEFinacleID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmBlackListedBVN">
+      <soap:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/ConfirmBlackListedBVN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountSolID">
+      <soap:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/GetAccountSolID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLIVEValidateAccountCIF">
+      <soap:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/GetLIVEValidateAccountCIF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountFromPhone">
+      <soap:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/GetAccountFromPhone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateBVNNIBBS">
+      <soap:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/ValidateBVNNIBBS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLIVECustomerDetails">
+      <soap:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/GetLIVECustomerDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InvestmentBookingDetails">
+      <soap:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/InvestmentBookingDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQueryLIVEResultDataTableMethod">
+      <soap:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/GetQueryLIVEResultDataTableMethod" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccountDetailsArrayFromPhone">
+      <soap:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/AccountDetailsArrayFromPhone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomer">
+      <soap:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/GetCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRates">
+      <soap:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/GetRates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FinacleCurrency">
+      <soap:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/FinacleCurrency" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CBNInterventionInviciblesGetRates">
+      <soap:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/CBNInterventionInviciblesGetRates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CBNInterventionInviciblesFinacleCurrency">
+      <soap:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/CBNInterventionInviciblesFinacleCurrency" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InvestmentBookingDetailsArray">
+      <soap:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/InvestmentBookingDetailsArray" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountFromCIF">
+      <soap:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/GetAccountFromCIF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCorporateBVNValidatequery">
+      <soap:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/GetCorporateBVNValidatequery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJointBVNValidatequery">
+      <soap:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/GetJointBVNValidatequery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUBAAlertDetails">
+      <soap:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/GetUBAAlertDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUBAUDIrectDetails">
+      <soap:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/GetUBAUDIrectDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUBACorporateUDIrectDetails">
+      <soap:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/GetUBACorporateUDIrectDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBVN">
+      <soap:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/GetBVN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FinacleValidationSoap12" type="tns:FinacleValidationSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ValidatRMCode">
+      <soap12:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/ValidatRMCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTestFinacleID">
+      <soap12:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/GetTestFinacleID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLIVEFinacleID">
+      <soap12:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/GetLIVEFinacleID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmBlackListedBVN">
+      <soap12:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/ConfirmBlackListedBVN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountSolID">
+      <soap12:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/GetAccountSolID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLIVEValidateAccountCIF">
+      <soap12:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/GetLIVEValidateAccountCIF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountFromPhone">
+      <soap12:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/GetAccountFromPhone" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateBVNNIBBS">
+      <soap12:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/ValidateBVNNIBBS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLIVECustomerDetails">
+      <soap12:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/GetLIVECustomerDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InvestmentBookingDetails">
+      <soap12:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/InvestmentBookingDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQueryLIVEResultDataTableMethod">
+      <soap12:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/GetQueryLIVEResultDataTableMethod" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccountDetailsArrayFromPhone">
+      <soap12:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/AccountDetailsArrayFromPhone" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomer">
+      <soap12:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/GetCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRates">
+      <soap12:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/GetRates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FinacleCurrency">
+      <soap12:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/FinacleCurrency" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CBNInterventionInviciblesGetRates">
+      <soap12:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/CBNInterventionInviciblesGetRates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CBNInterventionInviciblesFinacleCurrency">
+      <soap12:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/CBNInterventionInviciblesFinacleCurrency" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InvestmentBookingDetailsArray">
+      <soap12:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/InvestmentBookingDetailsArray" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountFromCIF">
+      <soap12:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/GetAccountFromCIF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCorporateBVNValidatequery">
+      <soap12:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/GetCorporateBVNValidatequery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJointBVNValidatequery">
+      <soap12:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/GetJointBVNValidatequery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUBAAlertDetails">
+      <soap12:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/GetUBAAlertDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUBAUDIrectDetails">
+      <soap12:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/GetUBAUDIrectDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUBACorporateUDIrectDetails">
+      <soap12:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/GetUBACorporateUDIrectDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBVN">
+      <soap12:operation soapAction="http://www.ubagroup.com/finacle10servvalidate/GetBVN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FinacleValidation">
+    <wsdl:port name="FinacleValidationSoap" binding="tns:FinacleValidationSoap">
+      <soap:address location="http://10.100.12.171/finacle10webservices/FinacleValidation.asmx" />
+    </wsdl:port>
+    <wsdl:port name="FinacleValidationSoap12" binding="tns:FinacleValidationSoap12">
+      <soap12:address location="http://10.100.12.171/finacle10webservices/FinacleValidation.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
